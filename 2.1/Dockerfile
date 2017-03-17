@@ -9,6 +9,6 @@ RUN curl -SL ${LOGSTASH_URL} -o /logstash.tar.gz \
     && tar zxf /logstash.tar.gz \
     && mv /logstash-${LOGSTASH_VERSION} /logstash \
     && rm -rf logstash.tar.gz \
-    && /logstash/bin/plugin install logstash-output-websocket
+    && /logstash/bin/plugin install logstash-output-websocket logstash-input-websocket
 
 ENTRYPOINT ["/logstash/bin/logstash"]
